@@ -1,0 +1,17 @@
+# Dataset & hasil training — berisi PII (nama, NIK anak) di nama file gambar dan isinya.
+# Jangan pernah di-commit ke repo publik.
+input_files/
+input_files_kia2024/
+results/
+
+# Model weights — besar (puluhan MB), bukan kode, di-deploy manual ke sistem OCR produksi.
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# OS
+.DS_Store

@@ -4,6 +4,8 @@ An end-to-end YOLO object detection pipeline for the Bukukia Segmentation projec
 
 **Features:** Focal Loss support, IoU callback tracking, DPI-aware preprocessing, coordinate-descent hyperparameter tuning, comprehensive evaluation with per-class metrics.
 
+> Dokumentasi lengkap (Bahasa Indonesia, ditulis per role): [`docs/INDEX.md`](docs/INDEX.md).
+
 ---
 
 ## Directory Structure
