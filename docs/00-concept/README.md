@@ -6,13 +6,13 @@ Sistem ini menjelaskan pipeline training model deteksi untuk Buku KIA (Kartu Ide
 
 ## Ringkasan 1 Menit (untuk semua orang)
 
-Sistem ini bukan aplikasi — ini adalah "dapur" tempat model AI dilatih. Prosesnya:
+Sistem ini bukan aplikasi yang dipakai langsung oleh pengguna. Ini adalah pipeline kerja untuk melatih model deteksi. Prosesnya:
 
 1. Kita punya foto-foto Buku KIA yang sudah ditandai (dikasih kotak) di bagian-bagian pentingnya — misalnya kotak untuk NIK, kotak untuk nama, dst.
 2. Model dilatih dari contoh-contoh itu supaya bisa menebak sendiri di mana letak kotak-kotak itu pada foto Buku KIA baru yang belum pernah dilihat.
 3. Model yang sudah jadi (`best.pt`) lalu dipakai oleh sistem OCR lain (project terpisah) untuk memotong bagian foto yang relevan sebelum dibaca teksnya.
 
-Analoginya: ini seperti melatih orang baru mengenali di mana letak "kolom NIK" di sebuah formulir, dengan menunjukkan ratusan contoh formulir yang sudah ditandai duluan. Setelah cukup latihan, dia bisa menemukan kolom itu sendiri di formulir yang belum pernah dilihat.
+Bayangkan proses ini seperti mengajari petugas menemukan kolom NIK pada formulir melalui banyak contoh yang sudah diberi tanda. Setelah mendapat cukup contoh, model dapat mencari area yang sama pada gambar baru.
 
 Yang perlu diketahui semua role: ini bagian dari pipeline OCR KIA, tapi berjalan terpisah dan tidak real-time — training butuh waktu (bisa puluhan menit–jam) dan dijalankan manual oleh tim AI/data. Hasilnya adalah satu file model (`best.pt`) yang di-deploy ke sistem OCR produksi. Datanya berisi data pribadi (nama orang tua, NIK anak) — lihat bagian Security di bawah.
 
